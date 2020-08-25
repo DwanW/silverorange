@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
 export function terrible(
-  failureRate = 0.5,
+  failureRate = 0.25,
   minimumDelayMs = 100,
   maximumDelayMs = 600
 ) {
