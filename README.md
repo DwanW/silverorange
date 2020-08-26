@@ -89,7 +89,8 @@ yarn start
 ```
 
 You can verify the API is working by visiting http://localhost:4000/posts in
-your browser or another HTTP client.
+your browser or another HTTP client. **Please note that about 25% of the time,
+the API returns an error message.**
 
 Getting Started with the React Native Frontend (/native)
 --------------------------------------------------------
