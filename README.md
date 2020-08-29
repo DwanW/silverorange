@@ -1,9 +1,9 @@
-silverorange React Native Developer Assessment
-==============================================
+silverorange Senior Developer Assessment
+========================================
 
 This exercise is designed to assess how you approach tasks required in your
-position as a React Native developer at silverorange. We are interested to see
-how you work as well, as what your final results are; include useful Git commit
+position as a senior developer at silverorange. We are interested to see how
+you work as well, as what your final results are; include useful Git commit
 messages and comments where you think your code may be unclear.
 
 Please do not include your name or any other self-identifying information in
@@ -23,22 +23,22 @@ Using the provided Expo application in `/native`:
  4. Also list each unique author. Make touching an author filter the list of
     posts by the selected author.
  5. Make each post in the list touchable. When you touch a post, navigate to
-    a new screen showing the formatted post body and title.
+    a new screen showing the formatted post body and title. The post body is
+    formatted as Markdown and the post screen should use the formatted Markdown.
  6. Include a way to return to the main screen with posts and authors.
  7. Include some platform-specific variation between iOS and Android on either
     the main screen or the post screen.
  8. Implement basic snapshot regression tests tests using Jest for your
     components. Jest is installed in the Expo project and can be run from the
     `native/` folder with `yarn test`.
-
-The post body is formatted as Markdown and the post screen should use the
-formatted Markdown.
+ 9. In a new Markdown file, make note of new things you learned during
+    implementation, and the process you took to learn them.
 
 ### (B) Code Review
 
 Using the sample application in `/review`:
 
- 1. Run the React application.
+ 1. Run the React application using `yarn install` and `yarn start`.
  2. Review the React code.
  3. Make suggestions on how the example application could be improved. For this
     exercise your suggestions may apply to an entire application, file, or
