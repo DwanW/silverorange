@@ -38,8 +38,8 @@ formatted Markdown.
 
 Using the sample application in `/review`:
 
- 1. Run the Expo application.
- 2. Review the React Native code.
+ 1. Run the React application.
+ 2. Review the React code.
  3. Make suggestions on how the example application could be improved. For this
     exercise your suggestions may apply to an entire application, file, or
     lines of code. If appropriate, please prefix your suggestions with
