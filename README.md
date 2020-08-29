@@ -92,13 +92,13 @@ You can verify the API is working by visiting http://localhost:4000/posts in
 your browser or another HTTP client. **Please note that about 25% of the time,
 the API returns an error message.**
 
-Getting Started with the React Native Frontend (/native)
---------------------------------------------------------
+Getting Started with the Expo Frontend (/native)
+------------------------------------------------
 The React Native frontend is a bare Expo application. You will need the Expo
 tools installed to work on the app. See https://docs.expo.io/ for instructions
 on how to install the Expo CLI tools.
 
-### Running the React Native Application
+### Running the Expo Application
 
 ```sh
 cd native/
