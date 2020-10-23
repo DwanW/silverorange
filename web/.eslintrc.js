@@ -28,7 +28,7 @@ function convertOverridesToArray(overrides) {
 // config extensions for Prettier integration, and our own rules (based on
 // tslint-react).
 const newConfig = Object.assign({}, config, {
-  extends: ['plugin:prettier/recommended'],
+  extends: [...config.extends, 'react-app/jest', 'plugin:prettier/recommended'],
   rules: Object.assign(updateWarnRulesToErrorRules(config.rules), {
     'react/jsx-boolean-value': ['error', 'always'],
     'react/jsx-key': 'error',
@@ -60,10 +60,6 @@ const newConfig = Object.assign({}, config, {
     'use-isnan': 'error',
     'no-shadow': 'error',
     'no-unused-expressions': 'error',
-    // Override create-react-app to ignore ARIA role attributes on non-DOM
-    // nodes like the Author component. See
-    // https://github.com/evcohen/eslint-plugin-jsx-a11y/pull/171
-    'jsx-a11y/aria-role': ['error', { ignoreNonDOM: true }],
   }),
   overrides: convertOverridesToArray(config.overrides).map((override) => {
     if (override.parser === '@typescript-eslint/parser') {
@@ -77,7 +73,22 @@ const newConfig = Object.assign({}, config, {
             { default: 'array-simple' },
           ],
           '@typescript-eslint/ban-types': 'error',
-          '@typescript-eslint/class-name-casing': 'error',
+          '@typescript-eslint/naming-convention': [
+            'error',
+            {
+              selector: ['variableLike', 'memberLike'],
+              format: ['camelCase'],
+            },
+            {
+              selector: ['property', 'variable'],
+              format: ['camelCase', 'UPPER_CASE'],
+            },
+            {
+              selector: ['function', 'parameter'],
+              format: ['camelCase', 'PascalCase'],
+            },
+            { selector: 'typeLike', format: ['PascalCase'] },
+          ],
           '@typescript-eslint/explicit-member-accessibility': [
             'error',
             {
