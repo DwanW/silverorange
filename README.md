@@ -12,27 +12,20 @@ reviewing.
 
 Tasks
 -----
-### (A) Expo
+### (A) React
 
-Using the provided Expo application in `/native`:
+Using the provided React application in `/web`:
 
  1. Fetch post data from the provided Express API.
  2. Display a list of posts. Include the post title, summary, author, and
     publish date in the list.
  3. The list of posts should be displayed in reverse chronological order.
- 4. Also list each unique author. Make touching an author filter the list of
-    posts by the selected author.
- 5. Make each post in the list touchable. When you touch a post, navigate to
-    a new screen showing the formatted post body and title. The post body is
+ 4. Add buttons for each author. Make clicking on an author button filter
+    the list of posts by author.
+ 5. Make the title of each post in the list clickable. When you click a post
+    title, display the formatted post body and title. The post body is
     formatted as Markdown and the post screen should use the formatted Markdown.
- 6. Include a way to return to the main screen with posts and authors.
- 7. Include some platform-specific variation between iOS and Android on either
-    the main screen or the post screen.
- 8. Implement basic snapshot regression tests tests using Jest for your
-    components. Jest is installed in the Expo project and can be run from the
-    `native/` folder with `yarn test`.
- 9. In a new Markdown file, make note of new things you learned during
-    implementation, and the process you took to learn them.
+ 6. Include a way to return to the main list of posts and authors.
 
 ### (B) Code Review
 
@@ -52,8 +45,13 @@ TypeScript but you may use vanilla JavaScript to complete the tasks.
 
 Coding Standard
 ---------------
-Please use [Prettier](https://prettier.io/)
-for your code. If your editor is not already configured to use Prettier, you can format code
+Please use [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
+for your code. The project is set up to lint your code using:
+```sh
+yarn lint
+```
+
+If your editor is not already configured to use Prettier, you can format code
 in the project using:
 ```sh
 yarn prettier-write
