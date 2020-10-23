@@ -1,6 +1,7 @@
 import express, { Response, Request, NextFunction } from 'express';
 import cors from 'cors';
-import { posts } from './routes/posts';
+import { repos } from './routes/repos';
+import { terrible } from './middleware/terrible';
 import { AppError } from './typings/AppError';
 
 // CORS header configuration
@@ -11,8 +12,8 @@ const corsOptions = {
 
 export const app = express();
 
-// Routes
-app.use('/posts', cors(corsOptions), posts);
+// Routes. Note these will fail about 25% due to "terrible" middleware.
+app.use('/repos', terrible(), cors(corsOptions), repos);
 
 // error handling middleware should be loaded after the loading the routes
 app.use(
