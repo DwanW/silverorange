@@ -1,9 +1,9 @@
-silverorange Senior Developer Assessment
-========================================
+silverorange Intermediate Developer Assessment
+==============================================
 
 This exercise is designed to assess how you approach tasks required in your
-position as a senior developer at silverorange. We are interested to see how
-you work as well, as what your final results are; include useful Git commit
+position as an intermediate developer at silverorange. We are interested to see
+how you work as well, as what your final results are; include useful Git commit
 messages and comments where you think your code may be unclear.
 
 Please do not include your name or any other self-identifying information in
@@ -49,17 +49,6 @@ Using the provided React application in `/web`:
     this case, also render the Markdown content when clicking on the repository.
  7. Include a way to return to the main list of repositories after you click on
     a repository.
-
-### (C) Code Review
-
-Using the sample application in `/review`:
-
- 1. Run the React application using `yarn install` and `yarn start`.
- 2. Review the React code.
- 3. Make suggestions on how the example application could be improved. For this
-    exercise your suggestions may apply to an entire application, file, or
-    lines of code. If appropriate, please prefix your suggestions with
-    `filename:line` so we know to what code you are referring.
 
 Environment
 -----------
