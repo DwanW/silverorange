@@ -11,41 +11,23 @@ reviewing.
 
 ## Tasks
 
-### (A) Node/Express
-
-With the provided Express framework in `/api`:
-
-1.  Implement the `/repos` API endpoint
-2.  The endpoint should aggregate GitHub repository data from the
-    following sources: - https://api.github.com/users/silverorange/repos - The provided JSON file (in `api/data/repos.json`). Assume this file can
-    change while the service is running.
-3.  Only return repositories where `repository.fork` is `false`.
-4.  Return results as JSON-encoded data with a content-type of
-    `application/json`.
-
-**Note**: Middleware in `api/src/app.ts` intentionally adds latency and
-occasionally returns an error instead of a proper response. You are encouraged
-to leave this middleware in place to improve your implementation in (B).
-
-### (B) React
+### React
 
 Using the provided React application in `/web`:
 
-1.  Fetch repository data from the Express API created in (A).
-2.  Display a list of repositories. Include the repository name, description,
-    language, and forks count in the list.
-3.  The list of repositories should be displayed in reverse chronological order
-    by creation date.
-4.  Add buttons for each language type. Make clicking on a language button
-    filter the list by language type.
-5.  Make each repository in the list clickable.
-6.  When you click a repository, display the most recent commit date, author,
-    and message.
-7.  If the repository has a `README.md` file, it will be located at
-    https://raw.githubusercontent.com/${repo.full_name}/master/README.md. In
-    this case, also render the Markdown content when clicking on the repository.
-8.  Include a way to return to the main list of repositories after you click on
-    a repository.
+1.  Fetch post data from the provided Express API.
+2.  Display a list of posts. Include the post title, summary, author, and
+    publish date in the list.
+3.  The list of posts should be displayed in reverse chronological order.
+4.  Also list each unique author. Make clicking an author filter the list of
+    posts by the selected author.
+5.  Make the title of each post in the list clickable. When you click a post
+    title, display the formatted post body and title. The post body is
+    formatted as Markdown and the post display should use the formatted
+    Markdown.
+6.  Implement basic snapshot regression tests tests using Jest for your
+    components. Jest is installed by create-react-app and can be run from the
+    `web/` folder with `yarn test`.
 
 ## Environment
 
@@ -87,9 +69,7 @@ self-identifying information in your commit messages.
 For this exercise a pre-built Express application is provided. The application
 runs by default on `localhost:4000` and has the following endpoints:
 
-- `http://localhost:4000/repos` - returns a JSON-encoded array of repos. By
-  default, an empty array is returned. You will need to add an implementation
-  in (A).
+- `http://localhost:4000/posts` - returns a JSON-encoded array of blog posts.
 
 ### Running the Express Application
 
@@ -99,7 +79,7 @@ yarn install
 yarn start
 ```
 
-You can verify the API is working by visiting http://localhost:4000/repos in
+You can verify the API is working by visiting http://localhost:4000/posts in
 your browser or another HTTP client. **Please note that about 25% of the time,
 the API returns an error message.**
 
