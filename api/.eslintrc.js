@@ -3,7 +3,7 @@ module.exports = {
 
   extends: ['plugin:prettier/recommended'],
 
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
 
   plugins: ['import'],
 
@@ -68,7 +68,26 @@ module.exports = {
         '@typescript-eslint/adjacent-overload-signatures': 'error',
         '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
         '@typescript-eslint/ban-types': 'error',
-        '@typescript-eslint/class-name-casing': 'error',
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: ['function'],
+            format: ['camelCase'],
+          },
+          {
+            selector: ['memberLike', 'variable'],
+            format: ['camelCase', 'UPPER_CASE', 'snake_case'],
+          },
+          {
+            selector: ['parameter'],
+            format: ['camelCase'],
+            filter: {
+              regex: '^_+$',
+              match: false,
+            },
+          },
+          { selector: 'typeLike', format: ['PascalCase'] },
+        ],
         '@typescript-eslint/explicit-member-accessibility': [
           'error',
           {
