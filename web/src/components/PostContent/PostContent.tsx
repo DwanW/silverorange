@@ -12,6 +12,7 @@ function PostContent({ post, resetCurrentPost }: PostContentProps) {
       <button className="return-button" onClick={() => resetCurrentPost()}>
         &#10094; Return
       </button>
+      <h1>{post.title}</h1>
       {/* eslint-disable-next-line @typescript-eslint/naming-convention */}
       <div dangerouslySetInnerHTML={{ __html: marked(post.body) }} />
     </div>
